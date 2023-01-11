@@ -6,16 +6,16 @@
             <div class="clearfix">
                 <!--Top Left-->
                 <div class="top-left">
-                    <div class="text">Trusted by 50k customers around the world.</div>
+                    <div class="text">{{settingSite()->name}}</div>
                 </div>
                 <!--Top Right-->
                 <div class="top-right">
                     <!--Social Box-->
                     <ul class="social-box">
-                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a href="{{settingSite()->facebook}}"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="{{settingSite()->twitter}}"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="{{settingSite()->instagram}}"><span class="fa fa-instagram"></span></a></li>
+                        <li><a href="{{settingSite()->YouTube}}"><span class="fa fa-youtube-play"></span></a></li>
                     </ul>
                     <!--Language-->
 {{--                    <div class="language dropdown"><a class="btn btn-default dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#"><span class="flag-icon"><img src="images/icons/flag-icon.jpg" alt=""/></span>En &nbsp;<span class="icon fa fa-angle-down"></span></a>--}}
@@ -38,7 +38,7 @@
                 <!--Contact Number-->
                 <div class="contact-number">
                     <div class="number-inner">
-                        <span class="icon flaticon-phone-symbol-of-an-auricular-inside-a-circle"></span> +32 89 4567 01
+                        <span class="icon flaticon-phone-symbol-of-an-auricular-inside-a-circle"></span> {{settingSite()->phone}}
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                         <div class="icon-box"><span class="flaticon-pin"></span></div>
                         <ul>
                             <li><strong>We are at</strong></li>
-                            <li>718 Millon Str, Delaware 11226</li>
+                            <li>{{settingSite()->address}}</li>
                         </ul>
                     </div>
 
@@ -58,13 +58,13 @@
                         <div class="icon-box"><span class="flaticon-email"></span></div>
                         <ul>
                             <li><strong>Mail Us On</strong></li>
-                            <li>Support@examples.com</li>
+                            <li>{{settingSite()->email}}</li>
                         </ul>
                     </div>
 
                 </div>
                 <div class="pull-right logo-box">
-                    <div class="logo"><a href="index-2.html"><img src="{{asset('front/images/logo-2.png')}}" alt="" title=""></a></div>
+                    <div class=""><a href="{{route('website')}}"><img src="{{asset(settingSite()->image)}}" alt="" title=""></a></div>
                 </div>
 
 
@@ -110,30 +110,11 @@
                                     <li><a href="account.html">Account</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Gallery</a>
-                                <ul>
-                                    <li><a href="gallery.html">Gallery Style 01</a></li>
-                                    <li><a href="gallery-2.html">Gallery Style 02</a></li>
-                                    <li><a href="gallery-3.html">Gallery Style 03</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="about.html">About Company</a></li>
-                                    <li><a href="appointment.html">Make an Appointment</a></li>
-                                    <li><a href="pricing.html">Pricing Plan</a></li>
-                                    <li><a href="faq.html">FAQ’s</a></li>
-                                    <li><a href="testimonial.html">Testimonials</a></li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
-                                            <li><a href="blog-single.html">Blog Single</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="current"><a href="#">الصفحه الرئيسية</a></li>
+                            <li class="{{getActiveRoutesHome('blogs')}}"><a href="{{route('blogs')}}" style="font-family: 'Cairo', sans-serif;">المقالات</a></li>
+
+                            <li class="{{getActiveRoutesHome('aboutWebsite')}}" ><a href="{{route('aboutWebsite')}}" style="font-family: 'Cairo', sans-serif;">من نحن</a></li>
+
+                            <li class="{{getActiveRoutesHome('website')}}" ><a href="{{route('website')}}" style="font-family: 'Cairo', sans-serif;">الصفحه الرئيسية</a></li>
 
                         </ul>
                     </div>
@@ -206,7 +187,7 @@
 
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href="#">الصفحه الرئيسية</a>
+                            <li class="current dropdown"><a href="#" style="font-family: 'Cairo', sans-serif;">الصفحه الرئيسية</a>
 {{--                                <ul>--}}
 {{--                                    <li><a href="index-2.html">Home Page 01</a></li>--}}
 {{--                                    <li><a href="index-3.html">Home Page 02</a></li>--}}

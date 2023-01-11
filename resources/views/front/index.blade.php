@@ -13,44 +13,22 @@
 
         <div class="main-slider-carousel owl-carousel owl-theme">
 
-            <div class="slide" style="background-image:url({{asset('front/images/main-slider/image-4.jpg')}})">
+            @foreach(SliderActive() as $data)
+            <div class="slide" style="background-image:url({{asset($data->image)}})">
                 <div class="auto-container">
                     <div class="content">
-                        <h2 class="alternate">Doors</h2>
+
                         <h3 class="alternate">That Open For You All.</h3>
-                        <div class="text alternate">Must explain to you how all this mistaken idea of denouncing <br> pleasure and praising pain was born & will give you a completed.</div>
+                        <div class="text alternate">Must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born & will give you a completed.</div>
                         <div class="link-box">
-                            <a href="#" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>About Company</a>
+                            <a href="{{route('aboutWebsite')}}" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>About Company</a>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <div class="slide" style="background-image:url({{asset('front/images/main-slider/image-5.jpg')}})">
-                <div class="auto-container clearfix">
-                    <div class="content alternate">
-                        <h2 class="light">Prices</h2>
-                        <h3 class="light">We Will Give Lowest Quote.</h3>
-                        <div class="text light">Must explain to you how all this mistaken idea of denouncing pleasure and <br> praising pain was born and I will give you a completed.</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>About Company</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="slide" style="background-image:url({{asset('front/images/main-slider/image-6.jpg')}})">
-                <div class="auto-container">
-                    <div class="content">
-                        <h2 class="alternate">Windows</h2>
-                        <h3 class="alternate">Available in Wide Range of <span class="theme_color">Colors</span></h3>
-                        <div class="text alternate">Must explain to you how all this mistaken idea of denouncing pleasure and <br> praising pain was born and I will give you a completed.</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>About Company</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </section>
@@ -68,30 +46,32 @@
                     <!--Tab Btns-->
                     <div class="btns-outer text-center">
                         <ul class="tab-btns tab-buttons clearfix">
-                            <li class="p-tab-btn active-btn" data-tab="#p-tab-1"><span class="icon flaticon-window"></span> Window Types</li>
-                            <li class="p-tab-btn" data-tab="#p-tab-2"><span class="icon flaticon-doorway"></span> Door Styles</li>
-                            <li class="p-tab-btn" data-tab="#p-tab-3"><span class="icon flaticon-car-parts"></span> Maintenance</li>
+                            @foreach(CategoryHome() as $data)
+                            <li class="p-tab-btn active-btn" data-tab="#p-tab-1{{$data->id}}"> {{$data->name}}</li>
+                            @endforeach
                         </ul>
-                        <a href="#" class="appointment"><span class="arrow flaticon-right-arrow-2"></span> Make an Appointment</a>
                     </div>
 
-                    <!--Tabs Content-->
+
+                    @foreach(CategoryHome() as $data)
                     <div class="p-tabs-content">
 
                         <!--Portfolio Tab / Active Tab-->
-                        <div class="p-tab active-tab" id="p-tab-1">
+                        <div class="p-tab {{$loop->first ? ' active-tab' : null}}" id="p-tab-1{{$data->id}}">
                             <div class="content">
                                 <div class="services-item-carousel owl-carousel owl-theme">
 
+                                    @foreach(courseHome($data->id) as $row)
                                     <!--Services Block Three-->
                                     <div class="services-block-three">
                                         <div class="inner-box">
                                             <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-4.jpg')}}" alt="" /></a>
+                                                <a href="blog-single.html"><img src="{{asset($row->image)}}" alt="" /></a>
                                             </div>
                                             <div class="lower-content">
-                                                <h2><a href="blog-single.html">Casement</a></h2>
-                                                <div class="text">Consequences that are extremely nor of us ever undertakes take a example, of us ever undertakes...</div>
+                                                <h2><a href="blog-single.html">{{$row->name}}</a></h2>
+                                                <div class="text"> {!! Str::limit($row->notes, 250) !!}</div>
+
                                                 <div class="icon-box">
                                                     <span class="icon flaticon-door-1"></span>
                                                 </div>
@@ -99,321 +79,15 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-5.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Sliding Door</a></h2>
-                                                <div class="text">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because is pain circumstances...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-3"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-6.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Tilt & slide</a></h2>
-                                                <div class="text">Explain to you how this mistaken idea of denouncinga pleasure and praising pain account of the system...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-2"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-4.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Casement</a></h2>
-                                                <div class="text">Consequences that are extremely nor of us ever undertakes take a example, of us ever undertakes...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-1"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-5.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Sliding Door</a></h2>
-                                                <div class="text">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because is pain circumstances...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-3"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-6.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Tilt & slide</a></h2>
-                                                <div class="text">Explain to you how this mistaken idea of denouncinga pleasure and praising pain account of the system...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-2"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
 
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Tab -->
-                        <div class="p-tab" id="p-tab-2">
-                            <div class="content">
-                                <div class="three-item-carousel owl-carousel owl-theme">
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-5.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Sliding Door</a></h2>
-                                                <div class="text">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because is pain circumstances...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-3"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-4.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Casement</a></h2>
-                                                <div class="text">Consequences that are extremely nor of us ever undertakes take a example, of us ever undertakes...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-1"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-6.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Tilt & slide</a></h2>
-                                                <div class="text">Explain to you how this mistaken idea of denouncinga pleasure and praising pain account of the system...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-2"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-4.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Casement</a></h2>
-                                                <div class="text">Consequences that are extremely nor of us ever undertakes take a example, of us ever undertakes...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-1"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-5.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Sliding Door</a></h2>
-                                                <div class="text">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because is pain circumstances...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-3"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-6.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Tilt & slide</a></h2>
-                                                <div class="text">Explain to you how this mistaken idea of denouncinga pleasure and praising pain account of the system...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-2"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tab -->
-                        <div class="p-tab" id="p-tab-3">
-                            <div class="content">
-                                <div class="three-item-carousel owl-carousel owl-theme">
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-4.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Casement</a></h2>
-                                                <div class="text">Consequences that are extremely nor of us ever undertakes take a example, of us ever undertakes...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-1"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-5.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Sliding Door</a></h2>
-                                                <div class="text">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because is pain circumstances...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-3"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-6.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Tilt & slide</a></h2>
-                                                <div class="text">Explain to you how this mistaken idea of denouncinga pleasure and praising pain account of the system...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-2"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-4.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Casement</a></h2>
-                                                <div class="text">Consequences that are extremely nor of us ever undertakes take a example, of us ever undertakes...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-1"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-5.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Sliding Door</a></h2>
-                                                <div class="text">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because is pain circumstances...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-3"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <!--Services Block Three-->
-                                    <div class="services-block-three">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset('front/images/resource/service-6.jpg')}}" alt="" /></a>
-                                            </div>
-                                            <div class="lower-content">
-                                                <h2><a href="blog-single.html">Tilt & slide</a></h2>
-                                                <div class="text">Explain to you how this mistaken idea of denouncinga pleasure and praising pain account of the system...</div>
-                                                <div class="icon-box">
-                                                    <span class="icon flaticon-door-2"></span>
-                                                </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
+                    @endforeach
                 </div>
 
             </div>
@@ -483,8 +157,7 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image">
-                            <img src="{{asset('front/images/resource/about-1.jpg')}}" alt="" />
-                            <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image play-box"><span class="flaticon-play-arrow"></span></a>
+                            <img src="{{asset(aboutsActive()->image)}}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -494,15 +167,13 @@
                     <div class="inner-column">
                         <!--Sec Title-->
                         <div class="sec-title alternate">
-                            <h2>About <span class="theme_color">Company</span></h2>
+                            <h2>{{aboutsActive()->name}}</h2>
                         </div>
-                        <div class="text">Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue.</div>
-                        <ul class="list-style-one">
-                            <li>Leader for custom door and window solutions.</li>
-                            <li>Quality, performance & value.</li>
-                            <li>Providing comfort and protection for your family.</li>
-                        </ul>
-                        <a href="about.html" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>Read More</a>
+                        <div class="text">
+                        {{aboutsActive()->notes}}
+                        </div>
+
+                        <a href="{{route('aboutWebsite')}}" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>Read More</a>
                     </div>
                 </div>
 
@@ -639,7 +310,7 @@
             <!--Sec Title-->
             <div class="sec-title centered">
                 <div class="title-inner">
-                    <h2>Latest From <span class="theme_color">Gallery</span></h2>
+                    <h2>معرض الصور</h2>
                 </div>
             </div>
         </div>
@@ -647,46 +318,21 @@
             <div class="gallery-carousel owl-carousel owl-theme">
 
                 <!--Gallery Block-->
-                <div class="gallery-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="{{asset('front/images/gallery/4.jpg')}}" alt="" />
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <h3><a href="#">Double Glazed Windows</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!--Gallery Block-->
-                <div class="gallery-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img src="{{asset('front/images/gallery/5.jpg')}}" alt="" />
-                            <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <h3><a href="#">Double Glazed Windows</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @foreach(galleryActive()->photos as $row)
 
-                <!--Gallery Block-->
                 <div class="gallery-block">
                     <div class="inner-box">
                         <div class="image">
-                            <img src="{{asset('front/images/gallery/6.jpg')}}" alt="" />
+                            <img src="{{asset('admin/pictures/gallery/'.galleryActive()->id . '/' .  $row->Filename)}}" alt="" />
                             <div class="overlay-box">
-                                <div class="overlay-inner">
-                                    <h3><a href="#">Double Glazed Windows</a></h3>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
+
+
 
             </div>
         </div>
@@ -700,7 +346,7 @@
             <div class="sec-title alternate">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h2>Recommended <span class="theme_color">Items</span></h2>
+                        <h2>Product <span class="theme_color">Items</span></h2>
                     </div>
                     <div class="pull-right">
                         <a href="shop-single.html" class="more-products"><span class="arrow flaticon-right-arrow-2"></span> More Products</a>
@@ -710,76 +356,28 @@
             <div class="row clearfix">
 
                 <!--Product Block-->
+
+@foreach(ProductActive() as $data)
                 <div class="product-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="{{asset('front/images/resource/products/1.jpg')}}" alt="" />
-                            <ul class="options-box">
-                                <li><a href="images/resource/products/1.jpg" class="overlay-box lightbox-image" data-fancybox="product-gallery" data-caption=""><span class="icon flaticon-view"></span></a></li>
-                                <li><a href="shop-single.html"><span class="icon flaticon-shopping-cart"></span></a></li>
-                                <li><a href="shop-single.html"><span class="icon flaticon-heart"></span></a></li>
-                            </ul>
+                            <img src="{{asset($data->image)}}" alt="" />
+
                         </div>
                         <div class="lower-box">
-                            <h3><a href="shop-single.html">Asec-Cockspur</a></h3>
+                            <h3><a href="shop-single.html">{{$data->name}}</a></h3>
                             <ul class="product-price">
-                                <li>$35.00</li>
-                                <li class="discount">$45.00</li>
+                                <li>{{$data->price}}</li>
+                                <li class="discount">{{($data->price + 200)}}</li>
                             </ul>
                             <div class="buy-btn-box text-center">
-                                <a href="shop-single.html" class="theme-btn buy-btn">Buy Now</a>
+                                <a href="shop-single.html" class="theme-btn buy-btn">Product Details</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!--Product Block-->
-                <div class="product-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="{{asset('front/images/resource/products/2.jpg')}}" alt="" />
-                            <ul class="options-box">
-                                <li><a href="images/resource/products/2.jpg" class="overlay-box lightbox-image" data-fancybox="product-gallery" data-caption=""><span class="icon flaticon-view"></span></a></li>
-                                <li><a href="shop-single.html"><span class="icon flaticon-shopping-cart"></span></a></li>
-                                <li><a href="shop-single.html"><span class="icon flaticon-heart"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="lower-box">
-                            <h3><a href="shop-single.html">Asec-Cockspur</a></h3>
-                            <ul class="product-price">
-                                <li>$35.00</li>
-                                <li class="discount">$45.00</li>
-                            </ul>
-                            <div class="buy-btn-box text-center">
-                                <a href="shop-single.html" class="theme-btn buy-btn">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Product Block-->
-                <div class="product-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <img src="{{asset('front/images/resource/products/3.jpg')}}" alt="" />
-                            <ul class="options-box">
-                                <li><a href="images/resource/products/3.jpg" class="overlay-box lightbox-image" data-fancybox="product-gallery" data-caption=""><span class="icon flaticon-view"></span></a></li>
-                                <li><a href="shop-single.html"><span class="icon flaticon-shopping-cart"></span></a></li>
-                                <li><a href="shop-single.html"><span class="icon flaticon-heart"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="lower-box">
-                            <h3><a href="shop-single.html">Asec-Cockspur</a></h3>
-                            <ul class="product-price">
-                                <li>$35.00</li>
-                                <li class="discount">$45.00</li>
-                            </ul>
-                            <div class="buy-btn-box text-center">
-                                <a href="shop-single.html" class="theme-btn buy-btn">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
         </div>
@@ -798,6 +396,7 @@
             <div class="single-item-carousel owl-carousel owl-theme">
 
                 <!--Feedback Block-->
+                @foreach(previousWorkActive() as $row)
                 <div class="feedback-block">
                     <div class="inner-box">
                         <div class="row clearfix">
@@ -806,7 +405,7 @@
                                 <div class="inner-column">
                                     <div class="image-outer">
                                         <div class="image">
-                                            <img src="{{asset('front/images/resource/feedback-1.png')}}" alt="" />
+                                            <img src="{{asset($row->image)}}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -814,78 +413,21 @@
                             <!--Content Column-->
                             <div class="content-column col-lg-7 col-md-7 col-sm-12">
                                 <div class="inner-column">
-                                    <div class="title">Steve Hamilton</div>
-                                    <h2>Happiness Window</h2>
-                                    <div class="quote-icon">
-                                        <span class="icon flaticon-quote-1"></span>
-                                    </div>
-                                    <div class="text">Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</div>
-                                    <div class="location">From California</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!--Feedback Block-->
-                <div class="feedback-block">
-                    <div class="inner-box">
-                        <div class="row clearfix">
-                            <!--Image Column-->
-                            <div class="image-column col-lg-5 col-md-5 col-sm-12">
-                                <div class="inner-column">
-                                    <div class="image-outer">
-                                        <div class="image">
-                                            <img src="{{asset('front/images/resource/feedback-1.png')}}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Content Column-->
-                            <div class="content-column col-lg-7 col-md-7 col-sm-12">
-                                <div class="inner-column">
-                                    <div class="title">Steve Hamilton</div>
-                                    <h2>Happiness Window</h2>
+                                    <h2>{{$row->name}}</h2>
                                     <div class="quote-icon">
                                         <span class="icon flaticon-quote-1"></span>
                                     </div>
-                                    <div class="text">Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</div>
-                                    <div class="location">From California</div>
+                                    <div class="text">
+                                        {!! Str::limit($row->notes, 250) !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <!--Feedback Block-->
-                <div class="feedback-block">
-                    <div class="inner-box">
-                        <div class="row clearfix">
-                            <!--Image Column-->
-                            <div class="image-column col-lg-5 col-md-5 col-sm-12">
-                                <div class="inner-column">
-                                    <div class="image-outer">
-                                        <div class="image">
-                                            <img src="{{asset('front/images/resource/feedback-1.png')}}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Content Column-->
-                            <div class="content-column col-lg-7 col-md-7 col-sm-12">
-                                <div class="inner-column">
-                                    <div class="title">Steve Hamilton</div>
-                                    <h2>Happiness Window</h2>
-                                    <div class="quote-icon">
-                                        <span class="icon flaticon-quote-1"></span>
-                                    </div>
-                                    <div class="text">Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</div>
-                                    <div class="location">From California</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -901,77 +443,28 @@
             </div>
             <div class="row clearfix">
 
-                <!--News Block-->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12">
+
+@foreach(blogActive() as $blog)
+                <div class="news-block col-lg-4 col-md-6 col-sm-12" >
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="blog-single.html"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt="" /></a>
-                            <ul class="category">
-                                <li><a href="blog-single.html">Installation, </a></li>
-                                <li><a href="blog-single.html">Expert</a></li>
-                            </ul>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author">
-                                <div class="author-image"><img src="{{asset('front/images/resource/author-1.jpg')}}" alt="" /></div>
-                                Lewis Vivanda
-                            </div>
-                            <h3><a href="blog-single.html">5 reasons why uPVC is a better fenestration material.</a></h3>
-                            <div class="text">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born & complete system.</div>
-                            <ul class="post-date">
-                                <li>14th August, 2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                            <a href="blog-single.html"><img src="{{asset($blog->image)}}" alt="" /></a>
 
-                <!--News Block-->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="blog-single.html"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt="" /></a>
-                            <ul class="category">
-                                <li><a href="blog-single.html">Manufacturing</a></li>
-                            </ul>
                         </div>
                         <div class="lower-content">
-                            <div class="author">
-                                <div class="author-image"><img src="{{asset('front/images/resource/author-2.jpg')}}" alt="" /></div>
-                                Mark Fletcher
-                            </div>
-                            <h3><a href="blog-single.html">Shape your dream house with uPVC doors!.</a></h3>
-                            <div class="text">Desires to obtain pain of itself, because it is pain, but because occasionally circum-stances occur in which pleasure. </div>
-                            <ul class="post-date">
-                                <li>21st July, 2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-                <!--News Block-->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="blog-single.html"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt="" /></a>
-                            <ul class="category">
-                                <li><a href="blog-single.html">Window, </a></li>
-                                <li><a href="blog-single.html">Door</a></li>
-                                <li><a href="blog-single.html">Style</a></li>
-                            </ul>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author">
-                                <div class="author-image"><img src="{{asset('front/images/resource/author-3.jpg')}}" alt="" /></div>
-                                Dellin Swinny
+                            <h3><a href="blog-single.html">{{$blog->name}}</a></h3>
+                            <div class="text">
+                                {!! Str::limit($blog->notes, 250) !!}
                             </div>
-                            <h3><a href="blog-single.html">Budgeting your windows & doors | dream home.</a></h3>
-                            <div class="text">Right to find fault with a man who sed chooses to enjoy a pleasure that has no annoying consequences, </div>
                             <ul class="post-date">
-                                <li>10th July, 2018</li>
+                                <li>{{date('d')}}th {{date('M')}}, {{date('Y')}}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                @endforeach
+
 
             </div>
         </div>
@@ -984,40 +477,24 @@
             <!--Sec Title-->
             <div class="sec-title alternate centered">
                 <div class="title-inner">
-                    <h2>Affiliations & <span class="theme_color">Certification</span></h2>
+                    <h2>Ads</h2>
                 </div>
             </div>
             <div class="row clearfix">
 
+                @foreach(AdsActive() as $ads)
                 <!--Certificate Block-->
                 <div class="certificate-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{{asset('front/images/resource/certificate.png')}}" alt="" />
+                            <img src="{{asset($ads->image)}}" alt="" />
                         </div>
-                        <div class="text">Nor again is there anyone who loves or pursues or desires too.</div>
+                        <div class="text">{{$ads->name}}</div>
                     </div>
                 </div>
+                @endforeach
 
-                <!--Certificate Block-->
-                <div class="certificate-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{{asset('front/images/resource/certificate.png')}}" alt="" />
-                        </div>
-                        <div class="text"> Idea of denouncing pleasure praising pain was born  system expound.</div>
-                    </div>
-                </div>
 
-                <!--Certificate Block-->
-                <div class="certificate-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{{asset('front/images/resource/certificate.png')}}" alt="" />
-                        </div>
-                        <div class="text">Give you a complete account of that system expound actual.</div>
-                    </div>
-                </div>
 
             </div>
         </div>

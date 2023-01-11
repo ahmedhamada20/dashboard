@@ -48,20 +48,20 @@
                     <div class="social-outer text-center">
                         <!--Social Icon Two-->
                         <ul class="social-icon-two">
-                            <li><a href="#"><span class="icon fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon fa fa-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon fa fa-google-plus"></span></a></li>
+                            <li><a href="{{settingSite()->facebook}}"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="{{settingSite()->twitter}}"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="{{settingSite()->instagram}}"><span class="fa fa-instagram"></span></a></li>
+                            <li><a href="{{settingSite()->YouTube}}"><span class="fa fa-youtube-play"></span></a></li>
                         </ul>
                     </div>
 
                     <!--Pull Left-->
                     <div class="pull-left">
-                        <div class="text">+0 789.0123.456 <br> supportyou@example.com</div>
+                        <div class="text">+0 789.0123.456 <br> {{settingSite()->email}}</div>
                     </div>
 
                     <div class="pull-right">
-                        <div class="text">75014 Paris, France <br> 48 Boulevard Jourdan Candiate.</div>
+                        <div class="text">{{settingSite()->address}}</div>
                     </div>
 
                 </div>
@@ -75,20 +75,16 @@
 
                 <!--Logo Box-->
                 <div class="logo-box">
-                    <a href="index-2.html"><img src="{{asset('front/images/logo-3.png')}}" alt="" /></a>
+                    <a href="{{route('website')}}"><img src="{{asset(settingSite()->image)}}" alt="" /></a>
                 </div>
 
-                <div class="column pull-left">
-                    <div class="text">© 2009–2018 All rights reserved by <a href="#">Shutters</a></div>
+                <div class="column">
+                    <div class="text"  style="
+    margin-top: 18px;
+    margin-left: 393px;
+" > {{date('Y')+1}} – {{date('Y')}} © All rights reserved by <a href="https://faroukgroup.com/">Farouk Group</a></div>
                 </div>
 
-                <div class="column pull-right">
-                    <ul class="footer-nav">
-                        <li><a href="#">Private Policy</a></li>
-                        <li><a href="#">Terms & Condition</a></li>
-                        <li><a href="#">Legal</a></li>
-                    </ul>
-                </div>
 
             </div>
         </div>

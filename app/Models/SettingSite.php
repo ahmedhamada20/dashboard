@@ -11,7 +11,7 @@ class SettingSite extends Model
     use HasFactory;
     use HasTranslations;
 
-    public $translatable = ['name','notes'];
+    public $translatable = ['name','notes','image'];
 
     protected $fillable = [
         'name',
@@ -27,6 +27,13 @@ class SettingSite extends Model
         'Fax',
         'url',
     ];
+
+
+
+    public function getImageAttribute()
+    {
+        return $this->photo != null ? asset('admin/pictures/setting/' . $this->id .'/'.$this->photo->Filename ) : null;
+    }
 
     public function photo()
     {

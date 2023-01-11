@@ -19,7 +19,7 @@ use App\Models\SettingSite;
 if (!function_exists('getActiveRoutesHome')) {
     function getActiveRoutesHome($route)
     {
-        $actives = request()->routeIs($route) ? ' active' : null;
+        $actives = request()->routeIs($route) ? ' current' : null;
         if(!empty($actives)){
             return $actives;
         }
@@ -33,13 +33,93 @@ if (!function_exists('settingSite')) {
     }
 }
 
-if (!function_exists('silderActive')) {
-    function silderActive()
+if (!function_exists('SliderActive')) {
+    function SliderActive()
     {
-        $data = Ads::where('status', 1)->inRandomOrder()->limit(3)->get();
+        $data = Event::where('status', 1)->inRandomOrder()->limit(3)->get();
         return $data;
     }
 }
+
+if (!function_exists('CategoryHome')) {
+    function CategoryHome()
+    {
+        $data = Category::where('status', 1)->inRandomOrder()->limit(4)->get();
+        return $data;
+    }
+}
+
+if (!function_exists('courseHome')) {
+    function courseHome($categoryId)
+    {
+        $data = Course::where('status', 1)->where('category_id',$categoryId)->get();
+        return $data;
+    }
+}
+
+if (!function_exists('aboutsActive')) {
+    function aboutsActive()
+    {
+        $data = AboutUs::where('status', 1)->inRandomOrder()->limit(1)->first();
+        if (!empty($data)) {
+            return $data;
+        }
+    }
+}
+
+if (!function_exists('galleryActive')) {
+    function galleryActive()
+    {
+        $data = Gallery::where('status', 1)->inRandomOrder()->limit(1)->first();
+        return $data;
+    }
+}
+
+if (!function_exists('ProductActive')) {
+    function ProductActive()
+    {
+        $data = \App\Models\Product::where('status', 1)->inRandomOrder()->limit(3)->get();
+        return $data;
+    }
+}
+
+if (!function_exists('AdsActive')) {
+    function AdsActive()
+    {
+        $data = \App\Models\Ads::where('status', 1)->inRandomOrder()->limit(3)->get();
+        return $data;
+    }
+}
+
+
+
+
+if (!function_exists('blogActive')) {
+    function blogActive()
+    {
+        $data = Blog::where('status', 1)->inRandomOrder()->limit(3)->get();
+        return $data;
+    }
+}
+
+
+if (!function_exists('ProfessorActive')) {
+    function ProfessorActive()
+    {
+        $data = Number::where('status', 1)->inRandomOrder()->limit(4)->get();
+        return $data;
+    }
+}
+
+
+if (!function_exists('previousWorkActive')) {
+    function previousWorkActive()
+    {
+        $data = PreviousWork::where('status', 1)->inRandomOrder()->limit(5)->get();
+        return $data;
+    }
+}
+
 
 if (!function_exists('newsActive')) {
     function newsActive()
@@ -62,22 +142,8 @@ if (!function_exists('alleventsActive')) {
         return $data;
     }
 }
-if (!function_exists('aboutsActive')) {
-    function aboutsActive()
-    {
-        $data = AboutUs::where('status', 1)->inRandomOrder()->limit(1)->first();
-        if (!empty($data)) {
-            return $data;
-        }
-    }
-}
-if (!function_exists('previousWorkActive')) {
-    function previousWorkActive()
-    {
-        $data = PreviousWork::where('status', 1)->inRandomOrder()->limit(2)->get();
-        return $data;
-    }
-}
+
+
 if (!function_exists('PackagesActive')) {
     function PackagesActive()
     {
@@ -85,13 +151,7 @@ if (!function_exists('PackagesActive')) {
         return $data;
     }
 }
-if (!function_exists('categoryActive')) {
-    function categoryActive()
-    {
-        $data = Category::where('status', 1)->inRandomOrder()->limit(6)->get();
-        return $data;
-    }
-}
+
 if (!function_exists('courseActive')) {
     function courseActive()
     {
@@ -108,13 +168,7 @@ if (!function_exists('AllcourseActive')) {
     }
 }
 
-if (!function_exists('ProfessorActive')) {
-    function ProfessorActive()
-    {
-        $data = Number::where('status', 1)->inRandomOrder()->limit(2)->get();
-        return $data;
-    }
-}
+
 if (!function_exists('AllProfessorActive')) {
     function AllProfessorActive()
     {
@@ -123,13 +177,7 @@ if (!function_exists('AllProfessorActive')) {
     }
 }
 
-if (!function_exists('galleryActive')) {
-    function galleryActive()
-    {
-        $data = Gallery::where('status', 1)->inRandomOrder()->limit(1)->get();
-        return $data;
-    }
-}
+
 if (!function_exists('aboutusActive')) {
     function aboutusActive()
     {
@@ -137,13 +185,7 @@ if (!function_exists('aboutusActive')) {
         return $data;
     }
 }
-if (!function_exists('blogActive')) {
-    function blogActive()
-    {
-        $data = Blog::where('status', 1)->inRandomOrder()->limit(6)->get();
-        return $data;
-    }
-}
+
 if (!function_exists('blogcountActive')) {
     function blogcountActive()
     {
