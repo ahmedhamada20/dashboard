@@ -1,95 +1,104 @@
-<!-- Footer -->
-<footer id="page-footer">
-    <section id="footer-top">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-social">
-                    <figure>Follow us:</figure>
-                    <div class="icons">
-                        <a href="{{ settingSite()->twitter }}"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="{{ settingSite()->facebook }}"><i class="fa-brands fa-facebook"></i></a>
-                      
-                    </div><!-- /.icons -->
-                </div><!-- /.social -->
-                <div class="search pull-right">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-                    </span>
-                    </div><!-- /input-group -->
-                </div><!-- /.pull-right -->
-            </div><!-- /.footer-inner -->
-        </div><!-- /.container -->
-    </section><!-- /#footer-top -->
+<!--Footer Style Two-->
 
-    <section id="footer-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    @if( settingSite()->photo)
-                    <aside class="logo">
-                        <img src="{{ asset('admin/pictures/setting/'. settingSite()->id.'/'. settingSite()->photo->Filename) }}" width="70" height="70"  title="{{ settingSite()->name }}" class="vertical-center">
-                    </aside> 
-                    @else
-                    <aside class="logo">
-                        <img src="" width="70" height="70" title="{{ settingSite()->name }}" class="vertical-center">
-                    </aside>
-                    @endif
-                   
-                </div><!-- /.col-md-3 -->
-                <div class="col-md-3 col-sm-4">
-                    <aside>
-                        <header><h4>Contact Us</h4></header>
-                        <address>
-                            <strong>{{ settingSite()->name }}</strong>
-                            <br>
-                           
-                           
-                            <span>address :: {{ settingSite()->address }}</span>
-                            <br>
-                            <abbr title="phone">phone:</abbr> {{ settingSite()->phone }}
-                            <br>
-                            <abbr title="facebook">facebook:</abbr> <a href="#">{{ settingSite()->facebook }}</a>
-                        </address>
-                    </aside>
-                </div><!-- /.col-md-3 -->
-                <div class="col-md-3 col-sm-4">
-                    <aside>
-                        <header><h4>courses</h4></header>
-                        <ul class="list-links">
-                            @forelse (courseActive() as $row)
-                            <li><a href="#">{{ $row->name }}</a></li>
-                          
-                            @empty
-                                
-                            @endforelse
-                        </ul>
-                    </aside>
-                </div><!-- /.col-md-3 -->
-                <div class="col-md-3 col-sm-4">
-                    <aside>
-                        <header><h4>About Universo</h4></header>
-                        <p>
-                            {!! Str::limit( settingSite()->notes, 200, ' ...') !!}
-                        </p>
-                        <div>
-                            <a href="" class="read-more">All News</a>
+
+<footer class="footer-style-two">
+
+    <div class="auto-container">
+
+        <!--Upper Section-->
+        <div class="upper-section">
+
+            <!--Appointment Widget-->
+            <div class="appointment-widget">
+                <h2>Make an Appointment</h2>
+
+                <!--Appointment Form-->
+                <div class="appointment-form">
+
+                    <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/contact.html">
+                        <div class="row clearfix">
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                                <input type="text" name="name" value="" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                                <input type="text" name="phone" value="" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                                <select class="custom-select-box">
+                                    <option>Window Service</option>
+                                    <option>Service One</option>
+                                    <option>Service Two</option>
+                                    <option>Service Three</option>
+                                    <option>Service Four</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>Submit</button>
                         </div>
-                    </aside>
-                </div><!-- /.col-md-3 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-        <div class="background"><img src="{{ asset('assets/img/background-city.png') }}" class="" alt=""></div>
-    </section><!-- /#footer-content -->
+                    </form>
 
-    <section id="footer-bottom">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="copyright">© Theme Starz, All rights reserved</div><!-- /.copyright -->
-            </div><!-- /.footer-inner -->
-        </div><!-- /.container -->
-    </section><!-- /#footer-bottom -->
+                </div>
+
+            </div>
+
+            <!--Footer Info Block-->
+            <div class="footer-info-block">
+                <div class="clearfix">
+
+                    <!--Social Box-->
+                    <div class="social-outer text-center">
+                        <!--Social Icon Two-->
+                        <ul class="social-icon-two">
+                            <li><a href="#"><span class="icon fa fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="icon fa fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="icon fa fa-linkedin"></span></a></li>
+                            <li><a href="#"><span class="icon fa fa-google-plus"></span></a></li>
+                        </ul>
+                    </div>
+
+                    <!--Pull Left-->
+                    <div class="pull-left">
+                        <div class="text">+0 789.0123.456 <br> supportyou@example.com</div>
+                    </div>
+
+                    <div class="pull-right">
+                        <div class="text">75014 Paris, France <br> 48 Boulevard Jourdan Candiate.</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--Foter Bottom-->
+        <div class="footer-bottom">
+            <div class="clearfix">
+
+                <!--Logo Box-->
+                <div class="logo-box">
+                    <a href="index-2.html"><img src="{{asset('front/images/logo-3.png')}}" alt="" /></a>
+                </div>
+
+                <div class="column pull-left">
+                    <div class="text">© 2009–2018 All rights reserved by <a href="#">Shutters</a></div>
+                </div>
+
+                <div class="column pull-right">
+                    <ul class="footer-nav">
+                        <li><a href="#">Private Policy</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
 
 </footer>
-<!-- end Footer -->
+
+
+<!--End Footer Style Two-->
