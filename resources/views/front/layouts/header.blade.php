@@ -188,16 +188,7 @@
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                         <ul class="navigation clearfix">
                             <li class="current dropdown"><a href="#" style="font-family: 'Cairo', sans-serif;">الصفحه الرئيسية</a>
-{{--                                <ul>--}}
-{{--                                    <li><a href="index-2.html">Home Page 01</a></li>--}}
-{{--                                    <li><a href="index-3.html">Home Page 02</a></li>--}}
-{{--                                    <li class="dropdown"><a href="#">Header Styles</a>--}}
-{{--                                        <ul>--}}
-{{--                                            <li><a href="index-2.html">Header Style 01</a></li>--}}
-{{--                                            <li><a href="index-3.html">Header Style 02</a></li>--}}
-{{--                                        </ul>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
+
                             </li>
                             <li class="dropdown"><a href="#">Windows</a>
                                 <ul>
