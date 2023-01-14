@@ -82,7 +82,12 @@
                 <nav class="main-menu navbar-expand-md">
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                         <ul class="navigation clearfix">
-                            <li><a href="contact.html">Contact us</a></li>
+                            <li><a href="{{route('contactus')}}" style="font-family: 'Cairo', sans-serif;">تواصل معانا</a></li>
+
+                            <li class="{{getActiveRoutesHome('gallerys')}}"><a href="{{route('gallerys')}}" style="font-family: 'Cairo', sans-serif;">الصور</a>
+
+                            </li>
+
                             <li class="dropdown"><a href="#">Windows</a>
                                 <ul>
                                     <li><a href="windows-instalation.html">Installation</a></li>
@@ -101,15 +106,7 @@
                                     <li><a href="doors-type.html">Doors Types</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Shop</a>
-                                <ul>
-                                    <li><a href="shop.html">Our Products</a></li>
-                                    <li><a href="shop-single.html">Product Single</a></li>
-                                    <li><a href="shoping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="account.html">Account</a></li>
-                                </ul>
-                            </li>
+
                             <li class="{{getActiveRoutesHome('blogs')}}"><a href="{{route('blogs')}}" style="font-family: 'Cairo', sans-serif;">المقالات</a></li>
 
                             <li class="{{getActiveRoutesHome('aboutWebsite')}}" ><a href="{{route('aboutWebsite')}}" style="font-family: 'Cairo', sans-serif;">من نحن</a></li>

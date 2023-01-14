@@ -9,4 +9,6 @@
 <script src="{{asset('front/js/isotope.js')}}"></script>
 <script src="{{asset('front/js/jquery-ui.js')}}"></script>
 <script src="{{asset('front/js/script.js')}}"></script>
+
+
 @yield('js')

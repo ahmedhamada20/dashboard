@@ -24,6 +24,15 @@ class HomeController extends Controller
         return view('front.blogs.index');
     }
 
+    public function gallerys()
+    {
+        return view('front.galley.index');
+    }
+    public function contactus()
+    {
+        return view('front.contact.index');
+    }
+
     public function blogsDetails($id)
     {
         $blog = Blog::where('name->ar',str_replace('-', ' ', $id))->first();
