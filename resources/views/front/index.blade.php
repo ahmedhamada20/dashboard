@@ -448,12 +448,12 @@
                 <div class="news-block col-lg-4 col-md-6 col-sm-12" >
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="blog-single.html"><img src="{{asset($blog->image)}}" alt="" /></a>
+                            <a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}"><img src="{{asset($blog->image)}}" alt="" /></a>
 
                         </div>
                         <div class="lower-content">
 
-                            <h3><a href="blog-single.html">{{$blog->name}}</a></h3>
+                            <h3><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}">{{$blog->name}}</a></h3>
                             <div class="text">
                                 {!! Str::limit($blog->notes, 250) !!}
                             </div>
