@@ -66,16 +66,16 @@
                                     <div class="services-block-three">
                                         <div class="inner-box">
                                             <div class="image">
-                                                <a href="blog-single.html"><img src="{{asset($row->image)}}" alt="" /></a>
+                                                <a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}"><img src="{{asset($row->image)}}" alt="" /></a>
                                             </div>
                                             <div class="lower-content">
-                                                <h2><a href="blog-single.html">{{$row->name}}</a></h2>
+                                                <h2><a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}">{{$row->name}}</a></h2>
                                                 <div class="text"> {!! Str::limit($row->notes, 250) !!}</div>
 
                                                 <div class="icon-box">
                                                     <span class="icon flaticon-door-1"></span>
                                                 </div>
-                                                <a class="explore" href="blog-single.html">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
+                                                <a class="explore" href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
                                             </div>
                                         </div>
                                     </div>

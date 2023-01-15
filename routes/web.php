@@ -20,3 +20,6 @@ Route::get('/blogs',[HomeController::class,'blogs'])->name('blogs');
 Route::get('/gallerys',[HomeController::class,'gallerys'])->name('gallerys');
 Route::get('/contactus',[HomeController::class,'contactus'])->name('contactus');
 Route::get('/blogs/details/{id}',[HomeController::class,'blogsDetails'])->name('blogsDetails');
+
+Route::get('products/{id}',[HomeController::class,'product'])->name('products');
+Route::get('products/details/{id}',[HomeController::class,'productsDetails'])->name('productsDetails');

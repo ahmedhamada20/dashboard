@@ -44,7 +44,7 @@ if (!function_exists('SliderActive')) {
 if (!function_exists('CategoryHome')) {
     function CategoryHome()
     {
-        $data = Category::where('status', 1)->inRandomOrder()->limit(4)->get();
+        $data = Category::where('status', 1)->limit(4)->get();
         return $data;
     }
 }
