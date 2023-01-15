@@ -21,7 +21,7 @@
     <!--End Page Title-->
 
     <!--Windows Section-->
-    <section class="windows-page-section">
+    <section class="windows-page-section" dir="ltr">
         <div class="auto-container">
             <!--Title Box-->
             <div class="title-box">
