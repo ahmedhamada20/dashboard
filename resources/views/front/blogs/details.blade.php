@@ -72,8 +72,22 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <textarea name="message"  style="font-family: 'Cairo', sans-serif;" placeholder="كتابه الاستفسار"></textarea>
                                 </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        {!! NoCaptcha::renderJs() !!}
+                                        <div class="col-md-6">
+                                            {!! app('captcha')->display() !!}
+                                            @if ($errors->has('g-recaptcha-response'))
+                                                <span class="help-block">
+                                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <button class="theme-btn btn-style-four" type="submit" name="submit-form"><span class="arrow flaticon-right-arrow-4"></span>Submit Now</button>
+                                    <button class="theme-btn btn-style-four" type="submit" name="submit-form"  style="font-family: 'Cairo', sans-serif;"><span class="arrow flaticon-right-arrow-4"></span>ارسال</button>
                                 </div>
                             </div>
                         </form>

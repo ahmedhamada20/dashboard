@@ -46,7 +46,7 @@
 
                                 </div>
                             </div>
-                            <h3>{{$data->name}}</h3>
+                            <h3  style="font-family: 'Cairo', sans-serif;">{{$data->name}}</h3>
                             <p>
 
                                 {!! Str::limit($data->notes, 6000) !!}
@@ -83,18 +83,26 @@
                                             <input type="text" name="phone" value="" placeholder="رقم الهاتف" required>
                                         </div>
                                         <div class="form-group">
-                                            <select class="custom-select-box">
-                                                <option value="" disabled selected  style="font-family: 'Cairo', sans-serif;">اختر من القائمه</option>
-                                                <option>Select Option</option>
-                                                <option>Option One</option>
-                                                <option>Option Two</option>
-                                                <option>Option Three</option>
-                                                <option>Option Four</option>
-                                            </select>
+                                            <input type="text" class="form-control" value="{{$data->name}}" readonly>
                                         </div>
                                         <div class="form-group">
                                             <textarea placeholder="اكتب استفسارك"></textarea>
                                         </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+                                                {!! NoCaptcha::renderJs() !!}
+                                                <div class="col-md-6">
+                                                    {!! app('captcha')->display() !!}
+                                                    @if ($errors->has('g-recaptcha-response'))
+                                                        <span class="help-block">
+                                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                            </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <button type="submit" class="theme-btn submit-btn">ارسال</button>
                                         </div>

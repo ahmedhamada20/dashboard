@@ -30,11 +30,11 @@
                                     <option value="" disabled selected style="font-family: 'Cairo', sans-serif;">اختر من
                                         القائمه
                                     </option>
-                                    <option>Window Service</option>
-                                    <option>Service One</option>
-                                    <option>Service Two</option>
-                                    <option>Service Three</option>
-                                    <option>Service Four</option>
+
+                                    @foreach(CategoryHome() as $data)
+                                        <option  style="font-family: 'Cairo', sans-serif;">{{$data->name}}</option>
+
+                                    @endforeach
                                 </select>
                             </div>
                             <button type="submit" class="theme-btn btn-style-three"

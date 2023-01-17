@@ -88,15 +88,27 @@
                                         <div class="form-group">
                                             <select class="custom-select-box">
                                                 <option value="" disabled selected>اختر من القائمه</option>
-                                                <option>Select Option</option>
-                                                <option>Option One</option>
-                                                <option>Option Two</option>
-                                                <option>Option Three</option>
-                                                <option>Option Four</option>
+                                                @foreach(CategoryHome() as $data)
+                                                    <option  style="font-family: 'Cairo', sans-serif;">{{$data->name}}</option>
+
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <textarea placeholder="ارسال استفسارك"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+                                                {!! NoCaptcha::renderJs() !!}
+                                                <div class="col-md-6">
+                                                    {!! app('captcha')->display() !!}
+                                                    @if ($errors->has('g-recaptcha-response'))
+                                                        <span class="help-block">
+                                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                            </span>
+                                                    @endif
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="theme-btn submit-btn">ارسال</button>

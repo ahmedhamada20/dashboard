@@ -107,6 +107,19 @@
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <textarea name="message" placeholder="رسالتك..."></textarea>
                                     </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            {!! NoCaptcha::renderJs() !!}
+                                            <div class="col-md-6">
+                                                {!! app('captcha')->display() !!}
+                                                @if ($errors->has('g-recaptcha-response'))
+                                                    <span class="help-block">
+                                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                            </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <button type="submit" style="font-family: 'Cairo', sans-serif;" class="theme-btn btn-style-four"><span class="arrow flaticon-right-arrow-4"></span>ارسال بياناتك</button>
                                     </div>
