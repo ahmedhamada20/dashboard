@@ -18,10 +18,12 @@
                 <div class="auto-container">
                     <div class="content">
 
-                        <h3 class="alternate">That Open For You All.</h3>
-                        <div class="text alternate">Must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born & will give you a completed.</div>
+                        <h3 class="alternate" style="font-family: 'Cairo', sans-serif;">{{$data->name}}</h3>
+                        <div class="text alternate" style="font-family: 'Cairo', sans-serif;">
+                            {!! Str::limit($data->notes, 250) !!}
+                        </div>
                         <div class="link-box">
-                            <a href="{{route('aboutWebsite')}}" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>About Company</a>
+                            <a href="{{route('aboutWebsite')}}" class="theme-btn btn-style-three" style="font-family: 'Cairo', sans-serif;"><span class="arrow flaticon-right-arrow-4" style="font-family: 'Cairo', sans-serif;"></span>من نحن</a>
                         </div>
                     </div>
                 </div>
@@ -44,10 +46,10 @@
                 <div class="appointment-tabs tabs-box">
 
                     <!--Tab Btns-->
-                    <div class="btns-outer text-center">
+                    <div class="btns-outer text-center" >
                         <ul class="tab-btns tab-buttons clearfix">
                             @foreach(CategoryHome() as $data)
-                            <li class="p-tab-btn active-btn" data-tab="#p-tab-1{{$data->id}}"> {{$data->name}}</li>
+                            <li class="p-tab-btn active-btn" data-tab="#p-tab-1{{$data->id}}" style="font-family: 'Cairo', sans-serif;">  {{$data->name}}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -66,16 +68,16 @@
                                     <div class="services-block-three">
                                         <div class="inner-box">
                                             <div class="image">
-                                                <a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}"><img src="{{asset($row->image)}}" alt="" /></a>
+                                                <a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}" style="font-family: 'Cairo', sans-serif;"><img src="{{asset($row->image)}}" alt="" /></a>
                                             </div>
                                             <div class="lower-content">
-                                                <h2><a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}">{{$row->name}}</a></h2>
-                                                <div class="text"> {!! Str::limit($row->notes, 250) !!}</div>
+                                                <h2><a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}" style="font-family: 'Cairo', sans-serif;">{{$row->name}}</a></h2>
+                                                <div class="text" style="font-family: 'Cairo', sans-serif;"> {!! Str::limit($row->notes, 250) !!}</div>
 
                                                 <div class="icon-box">
                                                     <span class="icon flaticon-door-1"></span>
                                                 </div>
-                                                <a class="explore" href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}">Explore More <span class="arrow flaticon-right-arrow-2"></span></a>
+                                                <a class="explore" href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}" style="font-family: 'Cairo', sans-serif;">معرفه التفاصيل <span class="arrow flaticon-right-arrow-2"></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -96,57 +98,57 @@
     </section>
     <!--End Services Section Three-->
 
-    <!--Fun Facts Section-->
-    <div class="fact-counter-section">
-        <div class="fact-counter" style="background-image: url({{asset('front/images/background/pattern-3.png')}})">
-            <div class="auto-container">
-                <div class="row clearfix">
+{{--    <!--Fun Facts Section-->--}}
+{{--    <div class="fact-counter-section">--}}
+{{--        <div class="fact-counter" style="background-image: url({{asset('front/images/background/pattern-3.png')}})">--}}
+{{--            <div class="auto-container">--}}
+{{--                <div class="row clearfix">--}}
 
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="6000" data-stop="5">0</span>k
-                                <h4 class="counter-title">Windows Installed</h4>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!--Column-->--}}
+{{--                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">--}}
+{{--                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">--}}
+{{--                            <div class="count-outer count-box">--}}
+{{--                                <span class="count-text" data-speed="6000" data-stop="5">0</span>k--}}
+{{--                                <h4 class="counter-title">Windows Installed</h4>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="6000" data-stop="2">0</span>K
-                                <h4 class="counter-title">Doors Installed</h4>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!--Column-->--}}
+{{--                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">--}}
+{{--                        <div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">--}}
+{{--                            <div class="count-outer count-box">--}}
+{{--                                <span class="count-text" data-speed="6000" data-stop="2">0</span>K--}}
+{{--                                <h4 class="counter-title">Doors Installed</h4>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="6000" data-stop="57">0</span>
-                                <h4 class="counter-title">Expert Team Members</h4>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!--Column-->--}}
+{{--                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">--}}
+{{--                        <div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">--}}
+{{--                            <div class="count-outer count-box">--}}
+{{--                                <span class="count-text" data-speed="6000" data-stop="57">0</span>--}}
+{{--                                <h4 class="counter-title">Expert Team Members</h4>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-                            <div class="count-outer count-box">
-                                <span class="count-text" data-speed="8000" data-stop="219">0</span>
-                                <h4 class="counter-title">Corporate Partners</h4>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!--Column-->--}}
+{{--                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">--}}
+{{--                        <div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">--}}
+{{--                            <div class="count-outer count-box">--}}
+{{--                                <span class="count-text" data-speed="8000" data-stop="219">0</span>--}}
+{{--                                <h4 class="counter-title">Corporate Partners</h4>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End Fun Facts Section-->
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!--End Fun Facts Section-->--}}
 
     <!--About Section-->
     <section class="about-section">
@@ -167,13 +169,13 @@
                     <div class="inner-column">
                         <!--Sec Title-->
                         <div class="sec-title alternate">
-                            <h2>{{aboutsActive()->name}}</h2>
+                            <h2 style="font-family: 'Cairo', sans-serif;">{{aboutsActive()->name}}</h2>
                         </div>
-                        <div class="text">
-                        {{aboutsActive()->notes}}
+                        <div class="text" style="font-family: 'Cairo', sans-serif;">
+                            {!! Str::limit(aboutsActive()->notes, 250) !!}
                         </div>
 
-                        <a href="{{route('aboutWebsite')}}" class="theme-btn btn-style-three"><span class="arrow flaticon-right-arrow-4"></span>Read More</a>
+                        <a href="{{route('aboutWebsite')}}" class="theme-btn btn-style-three" style="font-family: 'Cairo', sans-serif;"><span class="arrow flaticon-right-arrow-4"></span>من نحن</a>
                     </div>
                 </div>
 
@@ -182,127 +184,7 @@
     </section>
     <!--End About Section-->
 
-    <!--Services Section Two-->
-    <section class="services-section-two">
-        <div class="auto-container">
-            <div class="services-item-carousel-two owl-carousel owl-theme">
 
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-door-4"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html">76 Yrs <br> of Experience</a></h3>
-                            <div class="text">Great explorer of the truth, thats master-builder off human happiness.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-award"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html">We <br> Care Quality</a></h3>
-                            <div class="text">There anyone who loves or pursues or desires to obtain works of itself.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-money"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html"> $50 <br> Million Sales</a></h3>
-                            <div class="text">Toil and pain can procure him some great pleasure to take a trivial example.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-labor-man"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html">Trained <br> Service Team</a></h3>
-                            <div class="text">Who loves or pursues or desires obtain pain off itself, in toil to exercise.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-door-4"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html">76 Yrs <br> of Experience</a></h3>
-                            <div class="text">Great explorer of the truth, thats master-builder off human happiness.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-award"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html">We <br> Care Quality</a></h3>
-                            <div class="text">There anyone who loves or pursues or desires to obtain works of itself.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-money"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html"> $50 <br> Million Sales</a></h3>
-                            <div class="text">Toil and pain can procure him some great pleasure to take a trivial example.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Services Block Two-->
-                <div class="services-block-two">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <span class="icon flaticon-labor-man"></span>
-                        </div>
-                        <div class="content-box">
-                            <h3><a href="window-services.html">Trained <br> Service Team</a></h3>
-                            <div class="text">Who loves or pursues or desires obtain pain off itself, in toil to exercise.</div>
-                            <a href="doors-brands.html" class="read-more">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--End Services Section Two-->
 
     <!--Gallery Section-->
     <section class="gallery-section-two">
@@ -310,7 +192,7 @@
             <!--Sec Title-->
             <div class="sec-title centered">
                 <div class="title-inner">
-                    <h2>معرض الصور</h2>
+                    <h2 style="font-family: 'Cairo', sans-serif;">معرض الصور</h2>
                 </div>
             </div>
         </div>
@@ -346,10 +228,9 @@
             <div class="sec-title alternate">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h2>Product <span class="theme_color">Items</span></h2>
+                        <h2 style="font-family: 'Cairo', sans-serif;"> منتجانتي</h2>
                     </div>
                     <div class="pull-right">
-                        <a href="shop-single.html" class="more-products"><span class="arrow flaticon-right-arrow-2"></span> More Products</a>
                     </div>
                 </div>
             </div>
@@ -357,21 +238,20 @@
 
                 <!--Product Block-->
 
-@foreach(ProductActive() as $data)
+@foreach(courseHomePages() as $data)
                 <div class="product-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="{{asset($data->image)}}" alt="" />
+                            <img src="{{asset($data->image)}}" width="150px" height="150px" alt="" />
 
                         </div>
                         <div class="lower-box">
-                            <h3><a href="shop-single.html">{{$data->name}}</a></h3>
+                            <h3><a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $data->name))}}" style="font-family: 'Cairo', sans-serif;">{{$data->name}}</a></h3>
                             <ul class="product-price">
                                 <li>{{$data->price}}</li>
-                                <li class="discount">{{($data->price + 200)}}</li>
                             </ul>
                             <div class="buy-btn-box text-center">
-                                <a href="shop-single.html" class="theme-btn buy-btn">Product Details</a>
+                                <a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $data->name))}}" class="theme-btn buy-btn" style="font-family: 'Cairo', sans-serif;">تفاصيل المنتج</a>
                             </div>
                         </div>
                     </div>
@@ -390,7 +270,7 @@
             <!--Sec Title-->
             <div class="sec-title alternate centered light">
                 <div class="title-inner">
-                    <h2>Customer <span class="theme_color">Feedback</span></h2>
+                    <h2 style="font-family: 'Cairo', sans-serif;">اراء العملاء</h2>
                 </div>
             </div>
             <div class="single-item-carousel owl-carousel owl-theme">
@@ -414,11 +294,11 @@
                             <div class="content-column col-lg-7 col-md-7 col-sm-12">
                                 <div class="inner-column">
 
-                                    <h2>{{$row->name}}</h2>
+                                    <h2 style="font-family: 'Cairo', sans-serif;">{{$row->name}}</h2>
                                     <div class="quote-icon">
                                         <span class="icon flaticon-quote-1"></span>
                                     </div>
-                                    <div class="text">
+                                    <div class="text" style="font-family: 'Cairo', sans-serif;">
                                         {!! Str::limit($row->notes, 250) !!}
                                     </div>
                                 </div>
@@ -439,7 +319,7 @@
         <div class="auto-container">
             <!--Sec Title-->
             <div class="sec-title centered">
-                <h2>Latest From <span class="theme_color">Blog</span></h2>
+                <h2 style="font-family: 'Cairo', sans-serif;">المدونات</h2>
             </div>
             <div class="row clearfix">
 
@@ -448,17 +328,17 @@
                 <div class="news-block col-lg-4 col-md-6 col-sm-12" >
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}"><img src="{{asset($blog->image)}}" alt="" /></a>
+                            <a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}" style="font-family: 'Cairo', sans-serif;"><img src="{{asset($blog->image)}}" alt="" /></a>
 
                         </div>
                         <div class="lower-content">
 
-                            <h3><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}">{{$blog->name}}</a></h3>
-                            <div class="text">
+                            <h3><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}" style="font-family: 'Cairo', sans-serif;">{{$blog->name}}</a></h3>
+                            <div class="text" style="font-family: 'Cairo', sans-serif;">
                                 {!! Str::limit($blog->notes, 250) !!}
                             </div>
                             <ul class="post-date">
-                                <li>{{date('d')}}th {{date('M')}}, {{date('Y')}}</li>
+                                <li>{{date($blog->created_at->format('d'))}} th {{date($blog->created_at->format('M'))}}, {{date($blog->created_at->format('Y'))}}</li>
                             </ul>
                         </div>
                     </div>
@@ -477,7 +357,7 @@
             <!--Sec Title-->
             <div class="sec-title alternate centered">
                 <div class="title-inner">
-                    <h2>Ads</h2>
+                    <h2 style="font-family: 'Cairo', sans-serif;">الاعلانات</h2>
                 </div>
             </div>
             <div class="row clearfix">
@@ -489,7 +369,7 @@
                         <div class="image wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <img src="{{asset($ads->image)}}" alt="" />
                         </div>
-                        <div class="text">{{$ads->name}}</div>
+                        <div class="text" style="font-family: 'Cairo', sans-serif;">{{$ads->name}}</div>
                     </div>
                 </div>
                 @endforeach

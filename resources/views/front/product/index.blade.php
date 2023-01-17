@@ -25,7 +25,7 @@
         <div class="auto-container">
             <!--Title Box-->
             <div class="title-box">
-                <h2>{{$category->name}}</h2>
+                <h2  style="font-family: 'Cairo', sans-serif;">{{$category->name}}</h2>
             </div>
 
 
@@ -44,9 +44,9 @@
                                     <div class="inner-box">
                                         <img src="{{asset($row->image)}}" alt=""  />
                                         <div class="lower-content">
-                                            <h3><a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}">{{$row->name}}</a></h3>
+                                            <h3><a href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}"  style="font-family: 'Cairo', sans-serif;">{{$row->name}}</a></h3>
                                             <div class="text"> {!! Str::limit($row->notes, 50) !!}</div>
-                                            <a class="explore" href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}">قراءه التفاصيل <span class="arrow flaticon-right-arrow-4"></span></a>
+                                            <a class="explore" href="{{route('productsDetails',preg_replace('/\s+/', '-',  $row->name))}}"  style="font-family: 'Cairo', sans-serif;">قراءه التفاصيل <span class="arrow flaticon-right-arrow-4"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -69,24 +69,25 @@
                         <div class="services-widget consulting-widget">
                             <div class="widget-content">
 
-                                <h2>Free Consultation</h2>
+                                <h2  style="font-family: 'Cairo', sans-serif;">ارسال استفسار</h2>
 
                                 <!--Consulting Form-->
-                                <div class="consulting-form">
+                                <div class="consulting-form"  style="font-family: 'Cairo', sans-serif;">
 
                                     <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/contact-form">
 
                                         <div class="form-group">
-                                            <input type="text" name="name" value="" placeholder="Name*" required>
+                                            <input type="text" name="name" value="" placeholder="الاسم" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="Email*" required>
+                                            <input type="email" name="email" value="" placeholder="البريد الالكتروني" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="phone" value="" placeholder="Phone*" required>
+                                            <input type="text" name="phone" value="" placeholder="رقم الهاتف" required>
                                         </div>
                                         <div class="form-group">
                                             <select class="custom-select-box">
+                                                <option value="" disabled selected>اختر من القائمه</option>
                                                 <option>Select Option</option>
                                                 <option>Option One</option>
                                                 <option>Option Two</option>
@@ -95,10 +96,10 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <textarea placeholder="Comments or Questions"></textarea>
+                                            <textarea placeholder="ارسال استفسارك"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="theme-btn submit-btn">Submit</button>
+                                            <button type="submit" class="theme-btn submit-btn">ارسال</button>
                                         </div>
 
                                     </form>
@@ -108,56 +109,56 @@
                             </div>
                         </div>
 
-                        <!--Brands Widget-->
-                        <div class="services-widget brands-widget">
-                            <div class="widget-content">
-                                <h2>Top Brands</h2>
-                                <div class="single-item-carousel owl-carousel owl-theme">
+{{--                        <!--Brands Widget-->--}}
+{{--                        <div class="services-widget brands-widget">--}}
+{{--                            <div class="widget-content">--}}
+{{--                                <h2>Top Brands</h2>--}}
+{{--                                <div class="single-item-carousel owl-carousel owl-theme">--}}
 
-                                    <div class="content">
-                                        <div class="brand-image">
-                                            <img src="{{asset('front/images/resource/brand.png')}}" alt="" />
-                                        </div>
-                                        <h3>Unilux</h3>
-                                        <div class="text">Great explorer the truth master builder of human happiness.</div>
-                                    </div>
+{{--                                    <div class="content">--}}
+{{--                                        <div class="brand-image">--}}
+{{--                                            <img src="{{asset('front/images/resource/brand.png')}}" alt="" />--}}
+{{--                                        </div>--}}
+{{--                                        <h3>Unilux</h3>--}}
+{{--                                        <div class="text">Great explorer the truth master builder of human happiness.</div>--}}
+{{--                                    </div>--}}
 
-                                    <div class="content">
-                                        <div class="brand-image">
-                                            <img src="{{asset('front/images/resource/brand.png')}}" alt="" />
-                                        </div>
-                                        <h3>Unilux</h3>
-                                        <div class="text">Great explorer the truth master builder of human happiness.</div>
-                                    </div>
+{{--                                    <div class="content">--}}
+{{--                                        <div class="brand-image">--}}
+{{--                                            <img src="{{asset('front/images/resource/brand.png')}}" alt="" />--}}
+{{--                                        </div>--}}
+{{--                                        <h3>Unilux</h3>--}}
+{{--                                        <div class="text">Great explorer the truth master builder of human happiness.</div>--}}
+{{--                                    </div>--}}
 
-                                    <div class="content">
-                                        <div class="brand-image">
-                                            <img src="{{asset('front/images/resource/brand.png')}}" alt="" />
-                                        </div>
-                                        <h3>Unilux</h3>
-                                        <div class="text">Great explorer the truth master builder of human happiness.</div>
-                                    </div>
+{{--                                    <div class="content">--}}
+{{--                                        <div class="brand-image">--}}
+{{--                                            <img src="{{asset('front/images/resource/brand.png')}}" alt="" />--}}
+{{--                                        </div>--}}
+{{--                                        <h3>Unilux</h3>--}}
+{{--                                        <div class="text">Great explorer the truth master builder of human happiness.</div>--}}
+{{--                                    </div>--}}
 
-                                </div>
-                            </div>
-                        </div>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!--Award Widget-->
-                        <div class="services-widget award-widget">
-                            <div class="widget-content">
-                                <h2>Awards & Certificate</h2>
-                                <div class="image">
-                                    <img src="{{asset('front/images/resource/certificate.png')}}" alt="" />
-                                </div>
-                                <div class="text">Nor again is there anyone who loves or pursues or desires too.</div>
-                            </div>
-                        </div>
+{{--                        <!--Award Widget-->--}}
+{{--                        <div class="services-widget award-widget">--}}
+{{--                            <div class="widget-content">--}}
+{{--                                <h2>Awards & Certificate</h2>--}}
+{{--                                <div class="image">--}}
+{{--                                    <img src="{{asset('front/images/resource/certificate.png')}}" alt="" />--}}
+{{--                                </div>--}}
+{{--                                <div class="text">Nor again is there anyone who loves or pursues or desires too.</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!--Buttons Widget-->
-                        <div class="services-widget buttons-widget">
-                            <a class="theme-btn glass-btn" href="#"><span class="icon-box flaticon-layers-1"></span>Glass Options</a>
-                            <a class="theme-btn color-btn" href="#"><span class="icon-box flaticon-paint"></span>Color Options</a>
-                        </div>
+{{--                        <!--Buttons Widget-->--}}
+{{--                        <div class="services-widget buttons-widget">--}}
+{{--                            <a class="theme-btn glass-btn" href="#"><span class="icon-box flaticon-layers-1"></span>Glass Options</a>--}}
+{{--                            <a class="theme-btn color-btn" href="#"><span class="icon-box flaticon-paint"></span>Color Options</a>--}}
+{{--                        </div>--}}
 
                     </div>
                 </div>

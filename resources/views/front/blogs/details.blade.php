@@ -59,18 +59,18 @@
                             <h2  style="font-family: 'Cairo', sans-serif;">استفسارك</h2>
                         </div>
                         <form method="post" action="">
-                            <div class="row clearfix">
+                            <div class="row clearfix"  style="font-family: 'Cairo', sans-serif;">
                                 <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                    <input type="text" name="username" placeholder="Name" @if(auth()->user()) value="{{auth()->user()->name}}" @else  @endif>
+                                    <input type="text" name="username" placeholder="الاسم" @if(auth()->user()) value="{{auth()->user()->name}}" readonly @else required  @endif>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                    <input type="email" name="email" placeholder="Email" required>
+                                    <input type="email" name="email" placeholder="البريد الالكتروني"  @if(auth()->user()) value="{{auth()->user()->email}}" readonly @else required  @endif>
                                 </div>
                                 <div class="col-lg-4 col-md-12 col-sm-12 form-group">
-                                    <input type="text" name="subject" placeholder="Subject" readonly value="{{$data->name}}">
+                                    <input type="text" name="subject" placeholder="المقاله" readonly value="{{$data->name}}">
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea name="message" placeholder="Comment..."></textarea>
+                                    <textarea name="message"  style="font-family: 'Cairo', sans-serif;" placeholder="كتابه الاستفسار"></textarea>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <button class="theme-btn btn-style-four" type="submit" name="submit-form"><span class="arrow flaticon-right-arrow-4"></span>Submit Now</button>
@@ -95,8 +95,8 @@
 
                             @foreach(blogActive() as $blog)
                             <article class="post">
-                                <figure class="post-thumb"><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}"><img src="{{asset($blog->image)}}" alt=""></a></figure>
-                                <div class="text"><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}">{{$blog->name}}</a></div>
+                                <figure class="post-thumb"><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}"  style="font-family: 'Cairo', sans-serif;"><img src="{{asset($blog->image)}}" alt=""></a></figure>
+                                <div class="text"><a href="{{route('blogsDetails',preg_replace('/\s+/', '-',  $blog->name))}}"  style="font-family: 'Cairo', sans-serif;">{{$blog->name}}</a></div>
                                 <div class=""><span>{{ $blog->created_at->diffForHumans(['parts'=>3,'join'=>', '])}}</span></div>
                             </article>
                             @endforeach

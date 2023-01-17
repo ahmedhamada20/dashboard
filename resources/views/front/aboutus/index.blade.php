@@ -39,9 +39,9 @@
                     <div class="inner-column">
                         <!--Sec Title-->
                         <div class="sec-title alternate">
-                            <h2>{{aboutsActive()->name}}</h2>
+                            <h2  style="font-family: 'Cairo', sans-serif;">{{aboutsActive()->name}}</h2>
                         </div>
-                        <div class="text">
+                        <div class="text"  style="font-family: 'Cairo', sans-serif;">
                             {!! aboutsActive()->notes !!}
 
                         </div>
@@ -62,7 +62,7 @@
         <div class="auto-container">
             <!--Sec Title-->
             <div class="sec-title">
-                <h2>Meet Our <span class="theme_color">Team</span></h2>
+                <h2  style="font-family: 'Cairo', sans-serif;">  شركاء النجاح</h2>
             </div>
             <div class="row clearfix">
 
@@ -73,8 +73,8 @@
                             <img src="{{asset($row->image)}}" alt="" />
                         </div>
                         <div class="lower-content">
-                            <h3><a href="#">{{$row->name}}</a></h3>
-                            <div class="text">{!! Str::limit($row->notes, 150) !!}</div>
+                            <h3><a style="font-family: 'Cairo', sans-serif;">{{$row->name}}</a></h3>
+                            <div class="text"  style="font-family: 'Cairo', sans-serif;">{!! Str::limit($row->notes, 150) !!}</div>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
             <!--Sec Title-->
             <div class="sec-title alternate centered">
                 <div class="title-inner">
-                    <h2>Ads</h2>
+                    <h2 style="font-family: 'Cairo', sans-serif;">الاعلانات</h2>
                 </div>
             </div>
             <div class="row clearfix">
@@ -105,7 +105,7 @@
                             <div class="image wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <img src="{{asset($ads->image)}}" alt="" />
                             </div>
-                            <div class="text">{{$ads->name}}</div>
+                            <div class="text" style="font-family: 'Cairo', sans-serif;">{{$ads->name}}</div>
                         </div>
                     </div>
                 @endforeach

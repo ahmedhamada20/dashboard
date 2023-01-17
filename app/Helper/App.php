@@ -36,7 +36,7 @@ if (!function_exists('settingSite')) {
 if (!function_exists('SliderActive')) {
     function SliderActive()
     {
-        $data = Event::where('status', 1)->inRandomOrder()->limit(3)->get();
+        $data = Event::where('status', 1)->inRandomOrder()->limit(4)->get();
         return $data;
     }
 }
@@ -53,6 +53,13 @@ if (!function_exists('courseHome')) {
     function courseHome($categoryId)
     {
         $data = Course::where('status', 1)->where('category_id',$categoryId)->get();
+        return $data;
+    }
+}
+if (!function_exists('courseHomePages')) {
+    function courseHomePages()
+    {
+        $data = Course::where('status', 1)->inRandomOrder()->limit(3)->get();
         return $data;
     }
 }

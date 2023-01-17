@@ -6,7 +6,7 @@
             <div class="clearfix">
                 <!--Top Left-->
                 <div class="top-left">
-                    <div class="text">{{settingSite()->name}}</div>
+                    <a class="text" href="{{route('website')}}">{{settingSite()->name}}</a>
                 </div>
                 <!--Top Right-->
                 <div class="top-right">
@@ -38,9 +38,16 @@
                 <!--Contact Number-->
                 <div class="contact-number">
                     <div class="number-inner">
-                        <span class="icon flaticon-phone-symbol-of-an-auricular-inside-a-circle"></span> {{settingSite()->phone}}
+                        <div class="icon-box"><span class="icon flaticon-phone-symbol-of-an-auricular-inside-a-circle"></span>
+                            <a href="tel:{{ settingSite()->phone }}">{{ settingSite()->phone }}</a>
+                        </div>
+
+
+
                     </div>
                 </div>
+
+
 
                 <div class="pull-left upper-right clearfix">
 
@@ -48,7 +55,7 @@
                     <div class="upper-column info-box">
                         <div class="icon-box"><span class="flaticon-pin"></span></div>
                         <ul>
-                            <li><strong>We are at</strong></li>
+                            <li><strong>العنوان</strong></li>
                             <li>{{settingSite()->address}}</li>
                         </ul>
                     </div>
@@ -57,8 +64,8 @@
                     <div class="upper-column info-box">
                         <div class="icon-box"><span class="flaticon-email"></span></div>
                         <ul>
-                            <li><strong>Mail Us On</strong></li>
-                            <li>{{settingSite()->email}}</li>
+                            <li><strong>البريد الالكتروني</strong></li>
+                            <a href="mailto: {{settingSite()->email}}">{{settingSite()->email}}</a>
                         </ul>
                     </div>
 
@@ -77,9 +84,11 @@
     <!--Header Lower-->
     <div class="header-lower">
 
+
         <div class="auto-container">
             <div class="nav-outer clearfix">
-                <nav class="main-menu navbar-expand-md">
+                <nav class="main-menu navbar-expand-md"  style="
+    margin-right: 319px;">
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                         <ul class="navigation clearfix">
                             <li><a href="{{route('contactus')}}" style="font-family: 'Cairo', sans-serif;">تواصل معانا</a></li>
@@ -116,39 +125,39 @@
                         </button>
                     </div>
                 </nav>
-                <!-- Main Menu End-->
-                <div class="outer-box clearfix">
-                    <!--Option Box-->
-                    <ul class="option-box">
-                        <li class="cart"><a href="shop-single.html"><span class="icon flaticon-shopping-cart-of-checkered-design"></span><span class="number">0</span></a></li>
-                        <!--Search Box-->
-                        <li class="search-box-outer">
-                            <div class="dropdown">
-                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
-                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
-                                    <li class="panel-outer">
-                                        <div class="form-container">
-                                            <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/blog.html">
-                                                <div class="form-group">
-                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required>
-                                                    <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+{{--                <!-- Main Menu End-->--}}
+{{--                <div class="outer-box clearfix">--}}
+{{--                    <!--Option Box-->--}}
+{{--                    <ul class="option-box">--}}
+{{--                        <li class="cart"><a href="shop-single.html"><span class="icon flaticon-shopping-cart-of-checkered-design"></span><span class="number">0</span></a></li>--}}
+{{--                        <!--Search Box-->--}}
+{{--                        <li class="search-box-outer">--}}
+{{--                            <div class="dropdown">--}}
+{{--                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>--}}
+{{--                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">--}}
+{{--                                    <li class="panel-outer">--}}
+{{--                                        <div class="form-container">--}}
+{{--                                            <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/blog.html">--}}
+{{--                                                <div class="form-group">--}}
+{{--                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required>--}}
+{{--                                                    <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>--}}
+{{--                                                </div>--}}
+{{--                                            </form>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-                    <!--Buttons Box-->
-                    <div class="buttons-box">
-                        <a class="theme-btn glass-btn" href="#"><span class="icon-box flaticon-layers-1"></span>Glass Options</a>
-                        <a class="theme-btn color-btn" href="#"><span class="icon-box flaticon-paint"></span>Color Options</a>
-                    </div>
+{{--                    <!--Buttons Box-->--}}
+{{--                    <div class="buttons-box">--}}
+{{--                        <a class="theme-btn glass-btn" href="#"><span class="icon-box flaticon-layers-1"></span>Glass Options</a>--}}
+{{--                        <a class="theme-btn color-btn" href="#"><span class="icon-box flaticon-paint"></span>Color Options</a>--}}
+{{--                    </div>--}}
 
-                </div>
-                <!-- Main Menu -->
+{{--                </div>--}}
+{{--                <!-- Main Menu -->--}}
 
             </div>
         </div>

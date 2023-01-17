@@ -25,7 +25,7 @@
         <div class="auto-container">
             <!--Title Box-->
             <div class="title-box">
-                <h2>{{$data->name}}</h2>
+                <h2  style="font-family: 'Cairo', sans-serif;">{{$data->name}}</h2>
             </div>
 
 
@@ -40,7 +40,7 @@
                             <div class="image-gallery">
                                 <div class="clearfix">
                                     <div class="image-column col-lg-12 col-md-6 col-sm-12">
-                                        <div class="before">Before</div>
+
                                         <img src="{{asset($data->image)}}" alt="" />
                                     </div>
 
@@ -66,24 +66,25 @@
                         <div class="services-widget consulting-widget">
                             <div class="widget-content">
 
-                                <h2>Free Consultation</h2>
+                                <h2  style="font-family: 'Cairo', sans-serif;">ارسال طلب للخدمه</h2>
 
                                 <!--Consulting Form-->
-                                <div class="consulting-form">
+                                <div class="consulting-form"  style="font-family: 'Cairo', sans-serif;">
 
                                     <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/contact-form">
 
                                         <div class="form-group">
-                                            <input type="text" name="name" value="" placeholder="Name*" required>
+                                            <input type="text" name="name" value="" placeholder="الاسم" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="Email*" required>
+                                            <input type="email" name="email" value="" placeholder="البريد الالكتروني" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="phone" value="" placeholder="Phone*" required>
+                                            <input type="text" name="phone" value="" placeholder="رقم الهاتف" required>
                                         </div>
                                         <div class="form-group">
                                             <select class="custom-select-box">
+                                                <option value="" disabled selected  style="font-family: 'Cairo', sans-serif;">اختر من القائمه</option>
                                                 <option>Select Option</option>
                                                 <option>Option One</option>
                                                 <option>Option Two</option>
@@ -92,10 +93,10 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <textarea placeholder="Comments or Questions"></textarea>
+                                            <textarea placeholder="اكتب استفسارك"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="theme-btn submit-btn">Submit</button>
+                                            <button type="submit" class="theme-btn submit-btn">ارسال</button>
                                         </div>
 
                                     </form>

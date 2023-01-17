@@ -50,7 +50,7 @@
                                 <span class="icon flaticon-phone-symbol-of-an-auricular-inside-a-circle"></span>
                             </div>
                             <h3 style="font-family: 'Cairo', sans-serif;"> رقم الهاتف</h3>
-                            <div class="text">{{settingSite()->phone}}</div>
+                            <a href="tel:{{ settingSite()->phone }}">{{ settingSite()->phone }}</a>
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@
                                 <span class="icon flaticon-question"></span>
                             </div>
                             <h3 style="font-family: 'Cairo', sans-serif;">البريد الالكتروني</h3>
-                            <div class="text">{{settingSite()->email}}</div>
+                            <a href="mailto: {{settingSite()->email}}">{{settingSite()->email}}</a>
                         </div>
                     </div>
 
@@ -70,9 +70,14 @@
         </div>
     </section>
     <!--End Office Section-->
-
+ <div class="row">
+     <div class="col-lg-7 col-sm-8">
+         <h1  style="font-family: 'Cairo', sans-serif;">تواصل معانا</h1>
+     </div>
+ </div>
     <!--Contact Form Section-->
     <section class="contact-form-section" style="background-image: url({{asset('front/images/background/3.png')}})">
+
         <div class="auto-container">
             <div class="row clearfix">
 
