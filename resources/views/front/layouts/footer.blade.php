@@ -15,7 +15,11 @@
                 <!--Appointment Form-->
                 <div class="appointment-form">
 
-                    <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/contact.html">
+                    <form method="post" action="{{ route('sendContact') }}">
+                        @csrf
+
+                        <input type="hidden" name="type_contact" value="2">
+
                         <div class="row clearfix">
                             <div class="form-group col-lg-4 col-md-4 col-sm-12">
                                 <input type="text" name="name" value="" placeholder="الاسم" required
@@ -26,13 +30,13 @@
                                        style="font-family: 'Cairo', sans-serif;">
                             </div>
                             <div class="form-group col-lg-4 col-md-4 col-sm-12">
-                                <select class="custom-select-box" style="font-family: 'Cairo', sans-serif;">
+                                <select class="custom-select-box" style="font-family: 'Cairo', sans-serif;" name="subject" required>
                                     <option value="" disabled selected style="font-family: 'Cairo', sans-serif;">اختر من
                                         القائمه
                                     </option>
 
                                     @foreach(CategoryHome() as $data)
-                                        <option  style="font-family: 'Cairo', sans-serif;">{{$data->name}}</option>
+                                     <option value="{{ $data->name }}">{{ $data->name }}</option>
 
                                     @endforeach
                                 </select>

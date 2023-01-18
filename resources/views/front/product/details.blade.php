@@ -71,22 +71,25 @@
                                 <!--Consulting Form-->
                                 <div class="consulting-form"  style="font-family: 'Cairo', sans-serif;">
 
-                                    <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/contact-form">
+                                    <form method="post" action="{{ route('sendContact') }}" autocomplete="off">
+                                        @csrf
+
+                                        <input type="hidden" name="type_contact" value="4">
 
                                         <div class="form-group">
-                                            <input type="text" name="name" value="" placeholder="الاسم" required>
+                                            <input type="text" name="name" value="" placeholder="الاسم">
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="البريد الالكتروني" required>
+                                            <input type="email" name="email" value="" placeholder="البريد الالكتروني">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="phone" value="" placeholder="رقم الهاتف" required>
+                                            <input type="text" name="phone" value="" placeholder="رقم الهاتف">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" value="{{$data->name}}" readonly>
+                                            <input type="text" class="form-control" name="subject" value="{{$data->name}}" readonly>
                                         </div>
                                         <div class="form-group">
-                                            <textarea placeholder="اكتب استفسارك"></textarea>
+                                            <textarea name="notes" placeholder="اكتب استفسارك"></textarea>
                                         </div>
 
                                         <div class="col-lg-12 col-md-12">

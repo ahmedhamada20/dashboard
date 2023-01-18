@@ -74,22 +74,25 @@
                                 <!--Consulting Form-->
                                 <div class="consulting-form"  style="font-family: 'Cairo', sans-serif;">
 
-                                    <form method="post" action="http://st.ourhtmldemo.com/new/Accoya/contact-form">
+                                    <form method="post" action="{{ route('sendContact') }}" autocomplete="off">
+                                        @csrf
+
+                                        <input type="hidden" name="type_contact" value="3">
 
                                         <div class="form-group">
-                                            <input type="text" name="name" value="" placeholder="الاسم" required>
+                                            <input type="text" name="name" value="" placeholder="الاسم" >
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="البريد الالكتروني" required>
+                                            <input type="email" name="email" value="" placeholder="البريد الالكتروني" >
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="phone" value="" placeholder="رقم الهاتف" required>
+                                            <input type="text" name="phone" value="" placeholder="رقم الهاتف" >
                                         </div>
                                         <div class="form-group">
                                             <select class="custom-select-box">
                                                 <option value="" disabled selected>اختر من القائمه</option>
                                                 @foreach(CategoryHome() as $data)
-                                                    <option  style="font-family: 'Cairo', sans-serif;">{{$data->name}}</option>
+                                                  <option value="{{ $data->name }}">{{ $data->name }}</option>
 
                                                 @endforeach
                                             </select>

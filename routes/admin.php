@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdsController;
 use App\Http\Controllers\Admin\BestSellerController;
 use App\Http\Controllers\Admin\BlogController;
@@ -53,7 +54,10 @@ Route::middleware(['auth', 'checkInformation'])->group(function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
 
+    Route::get('contactWith/{type}', [AdminController::class,'contactWith'])->name('contactWith');
+    Route::post('deletedcontactWith', [AdminController::class,'deletedcontactWith'])->name('deletedcontactWith');
 
+    Route::get('downloadContact/{type}', [AdminController::class, 'downloadContact'])->name('downloadContact');
     
     Route::resource('ads', AdsController::class);
     Route::get('updateAdsStatus', [AdsController::class, 'changeStatus'])->name('updateAdsStatus');

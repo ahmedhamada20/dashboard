@@ -23,3 +23,6 @@ Route::get('/blogs/details/{id}',[HomeController::class,'blogsDetails'])->name('
 
 Route::get('products/{id}',[HomeController::class,'product'])->name('products');
 Route::get('products/details/{id}',[HomeController::class,'productsDetails'])->name('productsDetails');
+
+
+Route::post('sendContact', [HomeController::class, 'sendContact'])->name('sendContact');

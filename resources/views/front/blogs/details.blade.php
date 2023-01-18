@@ -58,10 +58,12 @@
                         <div class="group-title">
                             <h2  style="font-family: 'Cairo', sans-serif;">استفسارك</h2>
                         </div>
-                        <form method="post" action="">
+                        <form method="post" action="{{ route('sendContact') }}" autocomplete="off">
+                            @csrf
+                            <input type="hidden" name="type_contact" value="1">
                             <div class="row clearfix"  style="font-family: 'Cairo', sans-serif;">
                                 <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                    <input type="text" name="username" placeholder="الاسم" @if(auth()->user()) value="{{auth()->user()->name}}" readonly @else required  @endif>
+                                    <input type="text" name="name" placeholder="الاسم" @if(auth()->user()) value="{{auth()->user()->name}}" readonly @else required  @endif>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12 form-group">
                                     <input type="email" name="email" placeholder="البريد الالكتروني"  @if(auth()->user()) value="{{auth()->user()->email}}" readonly @else required  @endif>
@@ -70,7 +72,7 @@
                                     <input type="text" name="subject" placeholder="المقاله" readonly value="{{$data->name}}">
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea name="message"  style="font-family: 'Cairo', sans-serif;" placeholder="كتابه الاستفسار"></textarea>
+                                    <textarea name="notes"  style="font-family: 'Cairo', sans-serif;" placeholder="كتابه الاستفسار"></textarea>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">

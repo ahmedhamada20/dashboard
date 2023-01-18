@@ -29,6 +29,15 @@
                 <div class="title-box">
                     <h2 style="font-family: 'Cairo', sans-serif;"> تواصل معنا</h2>
                 </div>
+                @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                 <div class="row clearfix">
 
                     <!--Office Block-->
@@ -88,24 +97,28 @@
                         <!--Contact Form-->
                         <div class="contact-form">
 
-                            <form method="post" action="" id="">
+                            <form method="post" action="{{ route('sendContact') }}" autocomplete="off" id="">
+                                @csrf
+
+                                <input type="hidden" name="type_contact" value="5">
+
                                 <div class="row clearfix">
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="text" name="name" value="" placeholder="الاسم" required>
+                                        <input type="text" name="name" value="" placeholder="الاسم" >
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="email" name="email" value="" placeholder="البريد الالكتروني" required>
-                                    </div>
-
-                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="email" name="email" value="" placeholder="العنوان" required>
+                                        <input type="email" name="email" value="" placeholder="البريد الالكتروني" >
                                     </div>
 
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="email" name="email" value="" placeholder="رقم الهاتف" required>
+                                        <input type="text" name="address" value="" placeholder="العنوان" >
+                                    </div>
+
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                        <input type="text" name="phone" value="" placeholder="رقم الهاتف" >
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <textarea name="message" placeholder="رسالتك..."></textarea>
+                                        <textarea name="notes" placeholder="رسالتك..."></textarea>
                                     </div>
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
