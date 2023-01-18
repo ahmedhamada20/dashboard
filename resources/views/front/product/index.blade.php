@@ -89,7 +89,7 @@
                                             <input type="text" name="phone" value="" placeholder="رقم الهاتف" >
                                         </div>
                                         <div class="form-group">
-                                            <select class="custom-select-box">
+                                            <select class="custom-select-box" name="subject">
                                                 <option value="" disabled selected>اختر من القائمه</option>
                                                 @foreach(CategoryHome() as $data)
                                                   <option value="{{ $data->name }}">{{ $data->name }}</option>
@@ -98,7 +98,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <textarea placeholder="ارسال استفسارك"></textarea>
+                                            <textarea name="notes" placeholder="ارسال استفسارك"></textarea>
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">

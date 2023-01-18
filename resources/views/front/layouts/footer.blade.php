@@ -41,6 +41,20 @@
                                     @endforeach
                                 </select>
                             </div>
+
+                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
+                               
+                                    {!! NoCaptcha::renderJs() !!}
+                                    <div class="col-md-6">
+                                        {!! app('captcha')->display() !!}
+                                        @if ($errors->has('g-recaptcha-response'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                
+                            </div>
                             <button type="submit" class="theme-btn btn-style-three"
                                     style="font-family: 'Cairo', sans-serif;"><span
                                     class="arrow flaticon-right-arrow-4"></span>ارسال
